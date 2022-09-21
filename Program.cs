@@ -1,31 +1,29 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 
-namespace ITEC104_ACT4
+const int n = 5;
+int[] numbers = new int[n];
+for (int i = 0; i < n; i++)
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            string[] Emails = { "waleed.pogi025@yahoo.com", 
-                                "juanillowlaeed@yahoo.com", 
-                                "waleed.juanillo69@yahoo.com" };
+    Console.Write("Enter Element : ", i + 1);
+    string str = Console.ReadLine();
+    numbers[i] = int.Parse(str);
 
-            string[] Usernames = {  "waleed022", 
-                                    "wjuanillo069", 
-                                    "Jwaleed025" };
-
-            string[] Passwords = { "TBH569", 
-                                   "tinining0123", 
-                                   "parak66" };
-
-            Console.Write("Index : ");
-            int x = Convert.ToInt32(Console.ReadLine());
-
-            Console.WriteLine("Email    : " + Emails[x]);
-            Console.WriteLine("Username : " + Usernames[x]);
-            Console.WriteLine("Password : " + Passwords[x]);       
-
-        }
-    }
 }
 
+Console.Write("\nODD NUMBERS : ");
+for (int i = 0; i < n; i++)
+{
+    if (numbers[i] % 2 == 1)
+        Console.Write("{0} ", numbers[i]);
+}
+
+
+Console.Write("\nEVEN NUMBERS : ");
+for (int i = 0; i < n; i++)
+{
+    if (numbers[i] % 2 == 0)
+        Console.Write("{0} ", numbers[i]);
+}
