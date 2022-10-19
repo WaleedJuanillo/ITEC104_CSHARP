@@ -1,30 +1,78 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
-namespace ACTIVITY_5_ITEC104
+namespace testing
 {
     class Program
     {
         static void Main(string[] args)
         {
-            List<int> intList = test (new List<int>() { 10, 20, 35, 65, 53, 48, 5, 1 });
+            HashSet<int> h1 = new HashSet<int>();
 
-            Console.WriteLine("10, 20, 35, 65, 53, 48, 5, 1");
+            Console.WriteLine("===My HashSet 1===");
 
-            foreach (var el in intList)
+            for (int i = 0; i < 5; i++)
             {
-                Console.Write(el.ToString() + " " );
+                Console.Write("Element: ");
+                h1.Add(Convert.ToInt32(Console.ReadLine()));
             }
+
+            Console.WriteLine();
+            
+            HashSet<int> h2 = new HashSet<int>();
+
+            Console.WriteLine("===My HashSet 2===");
+
+            for (int i = 0; i < 5; i++)
+            {
+                Console.Write("Element: ");
+                h2.Add(Convert.ToInt32(Console.ReadLine()));
+            }
+
+            Console.WriteLine();
+
+            HashSet<int> h3 = new HashSet<int>(h1);
+            h3.UnionWith(h2);
+
+            Console.WriteLine();
+            Console.Write("Union: ");
+
+            foreach (int i in h3)
+            {                
+                Console.Write(i + " ");
+            }
+
+            Console.WriteLine();
+
+            HashSet<int> h4 = new HashSet<int>(h1);
+            h4.IntersectWith(h2);
+
+            Console.WriteLine();
+            Console.Write("Intersection: ");
+
+            foreach (int i in h4)
+
+            {
+                Console.Write(i + " ");
+            }
+
+            Console.WriteLine();
+
+            HashSet<int> h5 = new HashSet<int>(h1);
+            h5.ExceptWith(h2);
+
+            Console.WriteLine();
+            Console.Write("Set Difference: ");
+
+            foreach (int i in h5)
+
+            {
+                Console.Write(i + " ");
+            }
+
+            Console.WriteLine();
             Console.ReadKey();
         }
-        public static List<int> test(List<int> nums)
-        {
-            return nums.Where(n => n % 10 != 5 ).ToList();
-        }
+
     }
 }
-
-
-
-
